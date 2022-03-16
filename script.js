@@ -1,16 +1,21 @@
+// set current year in the footer
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+// Hangle reviewForm submit
 document.getElementById("reviewForm")
 .addEventListener("submit", (event) => {
     event.preventDefault();
 
     const reviewTitle = document.getElementById("reviewTitle").value,
-        reviewText = document.getElementById("reviewText").value,
-        reviewName = document.getElementById("reviewName").value;
+      reviewText = document.getElementById("reviewText").value,
+      reviewName = document.getElementById("reviewName").value;
 
     const card = document.createElement("div");
     card.classList.add("col-lg-4", "col-md-6", "py-3");
 
     card.innerHTML = `
-    <div class="card h-100">
+    <div class="card h-100 bg-light text-dark">
       <div class="card-body">
         <h4 class="card-title">${ reviewTitle }</h4>
         <blockquote class="blockquote mb-0">
@@ -26,41 +31,45 @@ document.getElementById("reviewForm")
     document.getElementById("reviewsRow").append(card);
 })
 
-/*
-    // LOOOONG WAY TO DO THE ABOVE
 
-    const cardCol = document.createElement("div");
-    cardCol.classList.add("col-lg-4", "col-md-6", "my-3");
+// Function to toggle theme
+const toggleTheme = () => {
+    document.body.classList.toggle("bg-dark");
 
-    const card = document.createElement("div");
-    card.classList.add("card", "h-100");
+    document.querySelectorAll(".themeSwitchLabel").forEach(label => label.classList.toggle("text-light"));
 
-    const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
+    document.querySelector("nav").classList.toggle("navbar-dark");
+    document.querySelector("nav").classList.toggle("bg-dark");
 
-    const cardTitle = document.createElement("h4");
-    cardTitle.classList.add("card-title");
-    cardTitle.textContent = reviewTitle;
+    document.getElementById("home").classList.toggle("bg-dark");
+    document.getElementById("home").classList.toggle("text-light");
 
-    const blockquote = document.createElement("blockquote");
-    blockquote.classList.add("blockquote", "mb-0");
+    document.getElementById("about").classList.toggle("bg-dark");
+    document.getElementById("about").classList.toggle("text-light");
+    
+    document.getElementById("products").classList.toggle("bg-dark");
+    document.getElementById("products").classList.toggle("text-light");
+    
+    document.getElementById("reviews").classList.toggle("bg-dark");
+    document.getElementById("reviews").classList.toggle("text-light");
 
-    const comment = document.createElement('p');
-    comment.textContent = reviewText;
+    document.getElementById("contact").classList.toggle("bg-dark");
+    document.getElementById("contact").classList.toggle("text-light");
+}
 
-    const blockquoteFooter = document.createElement("footer");
-    blockquoteFooter.classList.add("blockquote-footer", "text-end");
-    blockquoteFooter.innerHTML = `<i>${ reviewName !== '' ? reviewName : "Anonymous" }</i>`;
 
-    blockquote.append(comment);
-    blockquote.append(blockquoteFooter);
+// Handle theme switching
+document.getElementById("themeSwitch").addEventListener("change", (event) => {
+  
+  // toggle theme button icon
+  if (event.target.checked) {
+    document.querySelector("label[for=themeSwitch]").classList.remove("bi-moon-fill");
+    document.querySelector("label[for=themeSwitch]").classList.add("bi-brightness-high-fill");
+  } else {
+    document.querySelector("label[for=themeSwitch]").classList.add("bi-moon-fill");
+    document.querySelector("label[for=themeSwitch]").classList.remove("bi-brightness-high-fill");
+  }
 
-    cardBody.append(cardTitle);
-    cardBody.append(blockquote);
-
-    card.append(cardBody);
-
-    cardCol.append(card);
-
-    document.getElementById("reviewsRow").append(cardCol);
-* */
+  // toggle theme
+  toggleTheme()
+});
