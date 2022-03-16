@@ -12,11 +12,15 @@
 	
 	<!-- Bootstrap CSS (Minified) -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+	<!-- Bootstrap Icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 	
 	<!-- External stylesheet -->
 	<link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="bg-light">
 
 <header>
 	<nav class="navbar px-2 py-3 navbar-expand-lg navbar-light bg-light">
@@ -25,7 +29,19 @@
 			<a class="navbar-brand fw-bold" href="#home">Hyperskill Cafe</a>
 			
 			<!--<span class="navbar-text">Just around the block!</span>-->
+			<!-- <div class="w-50 d-flex justify-content-end align-items-center">
+				<span class="themeSwitchLabel p-1 bi bi-moon-fill" style="cursor: pointer;"></span>
+				<div class="form-check form-switch m-0 ps-5">
+					<input class="form-check-input" type="checkbox" role="switch" id="themeSwitch" checked>
+				</div>
+				<span class="themeSwitchLabel p-1 bi bi-brightness-high-fill" style="cursor: pointer;"></span>
+			</div>-->
 			
+			<div class="w-50 me-4 d-flex justify-content-end align-items-center">
+			<input type="checkbox" class="btn-check" id="themeSwitch" autocomplete="off">
+			<label class="btn btn-outline-primary rounded-circle text-center d-flex justify-content-center align-items-center bi bi-moon-fill" for="themeSwitch" style="width: 42px; height: 42px;"></label>
+			</div>
+
 			<!-- Navbar toggler -->
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -33,7 +49,7 @@
 			
 			<!-- Collapsable navbar items -->
 			<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-col justify-content-center align-items-center">
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="#home">Home</a>
 					</li>
@@ -60,7 +76,7 @@
 	<div class="container-fluid p-0 p-3">
 		
 		<!-- Home Section -->
-		<div id="home" class="container-fluid p-0 d-flex flex-column-reverse flex-md-row bg-light gap-3">
+		<div id="home" class="container-fluid p-0 d-flex flex-column-reverse flex-md-row bg-light gap-3 rounded-3">
 			<div class="container-fluid m-auto p-5 rounded-3">
 				<h1 class="display-1 fw-bolder">
 					<span class="fw-light display-5 d-block">Welcome to</span>
@@ -101,7 +117,7 @@
 					
 					<!-- Card 01 -->
 					<div class="col-lg-4 col-md-6 py-3">
-						<div class="card h-100 rounded-3">
+						<div class="card h-100 bg-light text-dark rounded-3">
 							<img class="card-img-top img-fluid h-100 rounded-top" src="images/latte.jfif" alt="Latte image">
 							<div class="card-body">
 								<h5 class="card-title">Latte</h5>
@@ -112,7 +128,7 @@
 					
 					<!-- Card 02 -->
 					<div class="col-lg-4 col-md-6 py-3">
-						<div class="card h-100 rounded-3">
+						<div class="card h-100 bg-light text-dark rounded-3">
 							<img class="card-img-top img-fluid h-100 rounded-top" src="images/espresso.jfif" alt="Espresso image">
 							<div class="card-body">
 								<h5 class="card-title">Espresso</h5>
@@ -123,7 +139,7 @@
 					
 					<!-- Card 03 -->
 					<div class="col-lg-4 col-md-6 py-3">
-						<div class="card h-100 rounded-3">
+						<div class="card h-100 bg-light text-dark rounded-3">
 							<img class="card-img-top img-fluid h-100 rounded-top" src="images/turkish-coffee.jfif" alt="Turkish coffee image">
 							<div class="card-body">
 								<h5 class="card-title">Turkish Coffee</h5>
@@ -134,7 +150,7 @@
 					
 					<!-- Card 04 -->
 					<div class="col-lg-4 col-md-6 py-3">
-						<div class="card h-100 rounded-3">
+						<div class="card h-100 bg-light text-dark rounded-3">
 							<img class="card-img-top img-fluid h-100 rounded-top" src="images/frappuccino.jpg" alt="Frappuccino image">
 							<div class="card-body">
 								<h5 class="card-title">Frappuccino</h5>
@@ -145,7 +161,7 @@
 					
 					<!-- Card 05 -->
 					<div class="col-lg-4 col-md-6 py-3">
-						<div class="card h-100 rounded-3">
+						<div class="card h-100 bg-light text-dark rounded-3">
 							<img class="card-img-top img-fluid h-100 rounded-top" src="images/mocha.jpg" alt="Mocha image">
 							<div class="card-body">
 								<h5 class="card-title">Mocha</h5>
@@ -156,7 +172,7 @@
 					
 					<!-- Card 06 -->
 					<div class="col-lg-4 col-md-6 py-3">
-						<div class="card h-100 rounded-3">
+						<div class="card h-100 bg-light text-dark rounded-3">
 							<img class="card-img-top img-fluid h-100 rounded-top" src="images/cappuccino.jpg" alt="Cappuccino image">
 							<div class="card-body">
 								<h5 class="card-title">Cappuccino</h5>
@@ -181,7 +197,7 @@
 			<!-- Add Review Form Collapse -->
 			<div class="collapse" id="collapseReview">
 				<div class="px-5">
-					<div class="card card-body">
+					<div class="card bg-light text-dark card-body">
 						<!-- Add Review Form -->
 						<form class="row g-3" id="reviewForm">
 							
@@ -220,7 +236,7 @@
 					
 					<!-- Card 01 -->
 					<div class="col-lg-4 col-md-6 py-3">
-						<div class="card h-100">
+						<div class="card h-100 bg-light text-dark">
 							<div class="card-body">
 								<h4 class="card-title">Great Restaurant!</h4>
 								<blockquote class="blockquote mb-0">
@@ -235,7 +251,7 @@
 					
 					<!-- Card 02 -->
 					<div class="col-lg-4 col-md-6 py-3">
-						<div class="card h-100">
+						<div class="card h-100 bg-light text-dark">
 							<div class="card-body">
 								<h4 class="card-title">I love this place!</h4>
 								<blockquote class="blockquote mb-0">
@@ -250,7 +266,7 @@
 					
 					<!-- Card 03 -->
 					<div class="col-lg-4 col-md-6 py-3">
-						<div class="card h-100">
+						<div class="card h-100 bg-light text-dark">
 							<div class="card-body">
 								<h4 class="card-title">First time visit!</h4>
 								<blockquote class="blockquote mb-0">
@@ -333,8 +349,10 @@
 		</ul>
 	</div>
 	
-	<div class="container-fluid pb-5 px-4">
-		<span class="text-muted px-1">2021 Hyperskill Cafe</span>
+	<div class="container-fluid pb-5 px-4 d-flex flex-column flex-lg-row justify-content-between align-items-center">
+		<span class="text-muted px-1"><span id="year">2021</span> Hyperskill Cafe</span>
+		<span class="text-muted px-1"><a class="bi bi-github fs-3 p-2" href="https://github.com/deepak-parmar/hyperskill-cafe/" target="_blank"></a></span>
+		<span class="text-muted px-1">Made with ❤ by <a href="https://github.com/deepak-parmar" target="_blank">Deepak Parmar</a></span>
 	</div>
 </footer>
 
